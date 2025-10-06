@@ -414,7 +414,7 @@
       async function fetchLeaderboardData() {
         try {
           const [leaderboardResponse, countdownResponse] = await Promise.all([
-            fetch('https://showerfoamdata.vercel.app/api/leaderboard/rainbet'),
+            fetch('https://showerfoamdata.vercel.app/api/leaderboard/betbolt'),
             fetch('https://showerfoamdata.vercel.app/api/countdown/rainbet')
           ]);
           if (!leaderboardResponse.ok || !countdownResponse.ok) throw new Error('Network response was not ok');
@@ -491,7 +491,7 @@
 
         async function populatePreviousLeaderboard() {
           try {
-            const res = await fetch('https://showerfoamdata.vercel.app/api/prev-leaderboard/rainbet');
+            const res = await fetch('https://showerfoamdata.vercel.app/api/prev-leaderboard/betbolt');
             if(!res.ok) throw new Error('Failed to fetch previous leaderboard');
             const data = await res.json();
             const leaderboard = data.leaderboard || [];
