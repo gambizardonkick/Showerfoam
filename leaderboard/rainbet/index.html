@@ -180,9 +180,9 @@
                 <div class="nav-links">
                     <a href="/" class="nav-link">HOME</a>
                     <a href="/#socials" class="nav-link">SOCIALS</a>
-                    <a href="/rewards" class="nav-link">REWARDS</a>
-                    <a href="/leaderboard/betbolt" class="nav-link"><i class="fas fa-trophy" style="color: #d4af37"></i>
-                        BETBOLT</a>
+                    <a href="/leaderboard/rainbet" class="nav-link active">
+                        <i class="fas fa-trophy" style="color: #d4af37"></i> LEADERBOARD
+                    </a>
                 </div>
                 <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             </div>
@@ -192,23 +192,23 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <button class="close-menu"><i class="fas fa-times"></i></button>
-                <div class="nav-links">
-                    <a href="/" class="nav-link">HOME</a>
-                    <a href="/#socials" class="nav-link">SOCIALS</a>
-                    <a href="/rewards" class="nav-link">REWARDS</a>
-                    <a href="/leaderboard/betbolt" class="nav-link"><i class="fas fa-trophy" style="color: #d4af37"></i>
-                        BETBOLT</a>
-                </div>
+        <div class="nav-links">
+            <a href="/" class="nav-link">HOME</a>
+            <a href="/#socials" class="nav-link">SOCIALS</a>
+            <a href="/leaderboard/rainbet" class="nav-link active">
+                <i class="fas fa-trophy" style="color: #d4af37"></i> LEADERBOARD
+            </a>
+        </div>
     </div>
 
     <section class="leaderboard-section">
         <div class="section-title">
             <div class="leaderboard-switcher">
-                <a href="/leaderboard/betbolt" class="switcher-item active">
-                    <img src="https://i.ibb.co/jv9k41DG/image.png" alt="Rainbet" class="leaderboard-logo" />
+                <a href="/leaderboard/rainbet" class="switcher-item active">
+                    <img src="/assets/rainbet.png" alt="Rainbet" class="leaderboard-logo" />
                 </a>
             </div>
-            <h2 class="bonus-title"><span style="color: var(--primary-blue)">2,000$ MONTHLY LEADERBOARD</span></h2>
+            <h2 class="bonus-title"><span style="color: var(--primary-blue)">600$ MONTHLY LEADERBOARD</span></h2>
             <div class="countdown">
                 <div class="countdown-item"><span id="days">00</span><label>Days</label></div>
                 <div class="countdown-item"><span id="hours">00</span><label>Hours</label></div>
@@ -335,7 +335,7 @@
                 <div class="footer-links">
                     <a href="/" class="footer-link">Home</a>
                     <a href="/#socials" class="footer-link">Socials</a>
-                    <a href="/leaderboard/betbolt" class="footer-link">Betblot</a>
+                    <a href="/leaderboard/rainbet" class="footer-link">Leaderboard</a>
                 </div>
                 <div class="footer-social">
                     <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
@@ -409,7 +409,7 @@
       async function fetchLeaderboardData() {
         try {
           const [leaderboardResponse, countdownResponse] = await Promise.all([
-            fetch('https://showerfoamdata.vercel.app/api/leaderboard/betbolt'),
+            fetch('https://showerfoamdata.vercel.app/api/leaderboard/rainbet'),
             fetch('https://showerfoamdata.vercel.app/api/countdown/rainbet')
           ]);
           if (!leaderboardResponse.ok || !countdownResponse.ok) throw new Error('Network response was not ok');
@@ -486,7 +486,7 @@
 
         async function populatePreviousLeaderboard() {
           try {
-            const res = await fetch('https://showerfoamdata.vercel.app/api/prev-leaderboard/betbolt');
+            const res = await fetch('https://showerfoamdata.vercel.app/api/prev-leaderboard/rainbet');
             if(!res.ok) throw new Error('Failed to fetch previous leaderboard');
             const data = await res.json();
             const leaderboard = data.leaderboard || [];
